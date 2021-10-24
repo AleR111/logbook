@@ -1,7 +1,9 @@
 .container {
+  flex-grow: 1;
   display: flex;
 }
 
 .mainContainer {
-
+  flex-grow: 1;
+  padding: 20px 20px 0;
 }

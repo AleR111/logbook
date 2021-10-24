@@ -1,5 +1,8 @@
 .app {
-  background-color: #E5E5E5;
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  background-color: #F7FAFB;
 }
 
 .sideBar {
