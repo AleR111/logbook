@@ -1,5 +1,5 @@
 import { Header, Sidebar, Content } from "../../components"
-import styles from "./layoutTop.modules.scss"
+import styles from "./layoutTop.module.scss"
 
 export const LayoutTop = () => {
   return (

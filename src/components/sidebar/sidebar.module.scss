@@ -1,0 +1,29 @@
+.sidebar {
+  background-color: #062436;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.list {
+  padding-right: 12px;
+  & a {
+    color:  #FFFFFF;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+  }
+}
+
+.link {
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.img {
+  margin-left: 20px;
+  margin-right: 16px;
+}

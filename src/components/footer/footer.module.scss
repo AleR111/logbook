@@ -1,0 +1,22 @@
+.footer  {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 20px 36px;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+}
+
+.list {
+  list-style-type: none;
+}
+
+.button {
+  border: none;
+  background-color: unset;
+  color: #3DBDF6;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
