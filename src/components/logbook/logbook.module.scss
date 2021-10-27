@@ -1,22 +1,8 @@
-.footer  {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px 20px 36px;
-  font-weight: normal;
-  font-size: 12px;
-  line-height: 15px;
+.block {
+  padding: 16px 20px;
+  background-color: #fff;
 }
 
-.list {
-  list-style-type: none;
+.accordion {
+  border-radius: unset;
 }
-
-.button {
-  border: none;
-  background-color: unset;
-  color: #3DBDF6;
-  &:hover {
-    cursor: pointer;
-  }
-}
-
