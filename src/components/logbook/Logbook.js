@@ -13,9 +13,12 @@ import styles from "./logbook.module.scss"
 const Accordion = styled((props) => (
   <MuiAccordion disableGutters={true} elevation={0} square={true} {...props} />
 ))(() => ({
-  border: "none",
+  borderBottom: "2px solid #F7FAFB",
   "& .Mui-expanded": {
     backgroundColor: "#F3FCFF",
+  },
+  "&:before": {
+    content: "unset",
   },
 }))
 
@@ -25,12 +28,9 @@ const AccordionSummary = styled((props) => (
     {...props}
   />
 ))(({ theme }) => ({
-  marginRight: theme.spacing(0),
+  padding: theme.spacing(0),
   "& .MuiAccordionSummary-expandIconWrapper.Mui-expanded": {
     transform: "rotate(180deg)",
-  },
-  "& .MuiAccordionSummary-content": {
-    marginLeft: theme.spacing(0),
   },
 }))
 
@@ -49,15 +49,19 @@ export const Logbook = () => {
 
   return (
     <div className={styles.block}>
+      <h4>Бортовой журнал</h4>
+      <h1>Бортовой журнал</h1>
       {articles.map((el, idx) => {
         return (
           <Accordion key={idx}>
             <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
+              expandIcon={<ExpandMoreIcon sx={{ color: "#3DBDF6" }} />}
               aria-controls="panel1a-content"
               id="panel1a-header"
             >
-              <Typography>{el.childNodes[0].textContent}</Typography>
+              <Typography className={styles.accordionHeader}>
+                {el.childNodes[0].textContent}
+              </Typography>
             </AccordionSummary>
             <AccordionDetails>
               <div

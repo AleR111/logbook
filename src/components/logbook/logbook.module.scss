@@ -1,9 +1,11 @@
 .block {
-  //padding: 16px 20px;
-  //background-color: #fff;
-  //max-width: 1028px;
+  background-color: #fff;
+  padding: 20px;
+}
+.accordionHeader {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
 }
 
-.accordion {
-  border-radius: unset;
-}

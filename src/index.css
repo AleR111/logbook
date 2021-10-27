@@ -26,3 +26,8 @@ body,
 img {
   width: 100%;
 }
+
+#root {
+  display: flex;
+  flex-direction: column;
+}
