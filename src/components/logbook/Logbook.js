@@ -13,12 +13,16 @@ import styles from "./logbook.module.scss"
 const Accordion = styled((props) => (
   <MuiAccordion disableGutters={true} elevation={0} square={true} {...props} />
 ))(() => ({
-  borderBottom: "2px solid #F7FAFB",
+  // borderBottom: "2px solid #F7FAFB",
+  // minHeight: "60px",
   "& .Mui-expanded": {
     backgroundColor: "#F3FCFF",
   },
   "&:before": {
-    content: "unset",
+    height: "2px",
+    left: "20px",
+    right: "20px",
+    backgroundColor: "#F7FAFB",
   },
 }))
 
@@ -27,15 +31,21 @@ const AccordionSummary = styled((props) => (
     expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: "0.9rem" }} />}
     {...props}
   />
-))(({ theme }) => ({
-  padding: theme.spacing(0),
+))(() => ({
+  paddingLeft: "20px",
+  paddingRight: "20px",
+
   "& .MuiAccordionSummary-expandIconWrapper.Mui-expanded": {
     transform: "rotate(180deg)",
+  },
+  "& .MuiAccordionSummary-content": {
+    margin: "20px 0",
   },
 }))
 
 const AccordionDetails = styled(MuiAccordionDetails)(() => ({
-  padding: "20px 20px",
+  paddingLeft: "20px",
+  paddingRight: "20px",
   backgroundColor: "#F3FCFF",
 }))
 
@@ -49,13 +59,15 @@ export const Logbook = () => {
 
   return (
     <div className={styles.block}>
-      <h4>Бортовой журнал</h4>
-      <h1>Бортовой журнал</h1>
+      <h4 className={styles.upHeader}>Бортовой журнал</h4>
+      <h1 className={styles.header}>Бортовой журнал</h1>
       {articles.map((el, idx) => {
         return (
           <Accordion key={idx}>
             <AccordionSummary
-              expandIcon={<ExpandMoreIcon sx={{ color: "#3DBDF6" }} />}
+              expandIcon={
+                <ExpandMoreIcon sx={{ color: "#3DBDF6", fontSize: "24px" }} />
+              }
               aria-controls="panel1a-content"
               id="panel1a-header"
             >

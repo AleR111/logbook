@@ -1,6 +1,6 @@
 .block {
   background-color: #fff;
-  padding: 20px;
+  //padding: 20px;
 }
 .accordionHeader {
   font-style: normal;
@@ -9,3 +9,24 @@
   line-height: 19px;
 }
 
+.upHeader {
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: #062436;
+  padding: 20px 20px 0;
+}
+
+.header {
+  margin-top: 10px;
+  padding-bottom: 16px;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: #062436;
+  border-bottom: 2px solid #F7FAFB;
+}
