@@ -5,7 +5,9 @@ import MuiAccordionDetails from "@mui/material/AccordionDetails"
 import MuiAccordionSummary from "@mui/material/AccordionSummary"
 import { styled } from "@mui/material/styles"
 import Typography from "@mui/material/Typography"
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { getArticles } from "../../store/articles/thunks"
 // import styles from "./logbook.module.scss"
 
 const Accordion = styled((props) => (
@@ -38,27 +40,16 @@ const AccordionDetails = styled(MuiAccordionDetails)(() => ({
 }))
 
 export const Logbook = () => {
-  const [content, setContent] = useState([])
-  console.log(content)
-  useEffect(() => {
-    console.log(111)
-    ;(async () => {
-      const response = await fetch("https://sweb.ru/export/turbojournal/")
-      const text = await response.text()
-      const parser = new DOMParser()
-      const xmlDoc = parser.parseFromString(text, "text/xml")
+  const dispatch = useDispatch()
+  const articles = useSelector((state) => state.articlesStore.data)
 
-      // document.getElementById("demo").innerHTML =
-      //   xmlDoc.getElementsByTagName("title")[0].childNodes[0].nodeValue
-      const data = xmlDoc.getElementsByTagName("item")
-      console.log(Array.from(data))
-      setContent(Array.from(data))
-    })()
-  }, [])
+  useEffect(() => {
+    dispatch(getArticles())
+  }, [dispatch])
 
   return (
     <div>
-      {content.map((el, idx) => {
+      {articles.map((el, idx) => {
         return (
           <Accordion key={idx}>
             <AccordionSummary
