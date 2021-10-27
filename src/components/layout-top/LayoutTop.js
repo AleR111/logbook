@@ -7,7 +7,7 @@ export const LayoutTop = () => {
   return (
     <div className={styles.container}>
       <Switch>
-        <Route path={"/:selected"}>
+        <Route path={["/", "/:selected"]}>
           <Sidebar />
         </Route>
       </Switch>

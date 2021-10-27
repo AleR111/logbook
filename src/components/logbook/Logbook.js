@@ -8,7 +8,7 @@ import Typography from "@mui/material/Typography"
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { getArticles } from "../../store/articles/thunks"
-// import styles from "./logbook.module.scss"
+import styles from "./logbook.module.scss"
 
 const Accordion = styled((props) => (
   <MuiAccordion disableGutters={true} elevation={0} square={true} {...props} />
@@ -48,7 +48,7 @@ export const Logbook = () => {
   }, [dispatch])
 
   return (
-    <div>
+    <div className={styles.block}>
       {articles.map((el, idx) => {
         return (
           <Accordion key={idx}>
