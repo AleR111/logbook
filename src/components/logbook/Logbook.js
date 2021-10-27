@@ -49,7 +49,10 @@ const AccordionDetails = styled(MuiAccordionDetails)(() => ({
 
 export const Logbook = () => {
   const dispatch = useDispatch()
-  const { data, isPending, error } = useSelector((state) => state.articlesStore)
+  const { data, isPending, error } = useSelector(
+    (state) => state.articlesStore,
+    // (prev, next) => prev.data.length === next.data.length,
+  )
 
   const render = () => {
     if (isPending) return <LinearProgress />
